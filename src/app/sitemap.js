@@ -1,13 +1,12 @@
 export default function sitemap() {
-  const baseUrl = 'https://pravinmathew.netlify.app';
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://pravinmathew-pearl.vercel.app';
   
   return [
     {
       url: baseUrl,
       lastModified: new Date(),
       changeFrequency: 'weekly',
-      priority: 1,
+      priority: 1.0,
     },
   ];
 }
-

@@ -13,7 +13,10 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://pravinmathew-pearl.vercel.app';
+
 export const metadata = {
+  metadataBase: new URL(baseUrl),
   title: "Pravin A Mathew | Cloud & AI Infrastructure Engineer | Solutions Architect",
   description:
     "Pravin A Mathew - AI Infrastructure & DevOps Solutions Architect specializing in Autonomous AI Agents, RAG, Kubernetes, AWS, Multi-Agent Orchestration, and DevSecOps.",
@@ -28,27 +31,27 @@ export const metadata = {
     "RAG Infrastructure",
     "Pravin Mathew AWS",
     "Pravin Mathew Kubernetes",
-    "pravinmathew.netlify.app"
+    "Pravin Mathew Vercel",
+    "pravinmathew-pearl.vercel.app"
   ],
-  authors: [{ name: "Pravin A Mathew", url: "https://pravinmathew.netlify.app" }],
+  authors: [{ name: "Pravin A Mathew", url: baseUrl }],
   creator: "Pravin A Mathew",
   publisher: "Pravin A Mathew",
-  metadataBase: new URL("https://pravinmathew.netlify.app"),
   openGraph: {
-    title: "Pravin A Mathew | Cloud & AI Infrastructure Engineer",
+    title: "Pravin A Mathew | Cloud & AI Infrastructure Engineer | Solutions Architect",
     description:
-      "Pravin A Mathew - AI Infrastructure & DevOps Solutions Architect portfolio showcasing autonomous multi-agent systems, RAG pipelines, Kubernetes, AWS Cloud, and DevSecOps governance.",
-    url: "https://pravinmathew.netlify.app",
+      "AI Infrastructure & DevOps Solutions Architect portfolio showcasing autonomous multi-agent systems, RAG pipelines, Kubernetes, AWS Cloud, and DevSecOps governance.",
+    url: baseUrl,
     siteName: "Pravin A Mathew Portfolio",
     images: [
       {
-        url: "https://pravinmathew.netlify.app/images/profile.png",
+        url: "/images/profile.png",
         width: 1200,
         height: 630,
         alt: "Pravin A Mathew - Cloud & AI Infrastructure Engineer"
       },
     ],
-    locale: "en_IN",
+    locale: "en_US",
     type: "website",
   },
   twitter: {
@@ -56,10 +59,11 @@ export const metadata = {
     title: "Pravin A Mathew | Cloud & AI Infrastructure Engineer",
     description:
       "Portfolio of Pravin A Mathew — AI Agent Systems, RAG, AWS, Docker, Kubernetes, Terraform, and DevSecOps.",
-    images: ["https://pravinmathew.netlify.app/images/profile.png"],
+    images: ["/images/profile.png"],
+    creator: "@pravinmathew"
   },
   alternates: {
-    canonical: "https://pravinmathew.netlify.app",
+    canonical: baseUrl,
   },
   robots: {
     index: true,
@@ -80,8 +84,8 @@ export default function RootLayout({ children }) {
     "@type": "Person",
     "name": "Pravin Mathew",
     "alternateName": "Pravin A Mathew",
-    "url": "https://pravinmathew.netlify.app",
-    "image": "https://pravinmathew.netlify.app/images/profile.png",
+    "url": baseUrl,
+    "image": `${baseUrl}/images/profile.png`,
     "jobTitle": "Cloud & AI Infrastructure Engineer | Solutions Architect",
     "worksFor": {
       "@type": "Organization",
