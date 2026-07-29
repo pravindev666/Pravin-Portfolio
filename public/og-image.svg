@@ -1,80 +1,102 @@
 <svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0F172A"/>
-      <stop offset="50%" stop-color="#0B0F19"/>
-      <stop offset="100%" stop-color="#1E1B4B"/>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070913"/>
+      <stop offset="50%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#0B0F19"/>
     </linearGradient>
-    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+    
+    <linearGradient id="primaryGlow" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#EF4444"/>
       <stop offset="50%" stop-color="#F59E0B"/>
       <stop offset="100%" stop-color="#FCD34D"/>
     </linearGradient>
+    
+    <linearGradient id="cardBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E293B" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#0F172A" stop-opacity="0.95"/>
+    </linearGradient>
+    
     <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="15" result="blur" />
-      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+      <feGaussianBlur stdDeviation="30" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
     </filter>
   </defs>
 
   <!-- Background -->
-  <rect width="1200" height="630" fill="url(#bgGrad)"/>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- High-Tech Background Ambient Grid -->
+  <g opacity="0.12" stroke="#64748B" stroke-width="1">
+    <path d="M0 100H1200 M0 200H1200 M0 300H1200 M0 400H1200 M0 500H1200"/>
+    <path d="M200 0V630 M400 0V630 M600 0V630 M800 0V630 M1000 0V630"/>
+  </g>
+
+  <!-- Glowing Lighting Nodes -->
+  <circle cx="150" cy="150" r="280" fill="#F59E0B" opacity="0.18" filter="url(#glow)"/>
+  <circle cx="1050" cy="500" r="260" fill="#EF4444" opacity="0.18" filter="url(#glow)"/>
+
+  <!-- Outer Neon Border Frame -->
+  <rect x="24" y="24" width="1152" height="582" rx="28" fill="none" stroke="url(#primaryGlow)" stroke-opacity="0.4" stroke-width="2"/>
+
+  <!-- Top Pill Badge -->
+  <g transform="translate(80, 75)">
+    <rect width="460" height="42" rx="21" fill="#F59E0B" fill-opacity="0.15" stroke="#F59E0B" stroke-opacity="0.5" stroke-width="1.5"/>
+    <circle cx="24" cy="21" r="6" fill="#10B981"/>
+    <text x="42" y="27" font-family="Inter, system-ui, -apple-system, sans-serif" font-weight="800" font-size="15" fill="#FCD34D" letter-spacing="1.5">SOLUTIONS ARCHITECT &amp; AI INFRASTRUCTURE</text>
+  </g>
+
+  <!-- Giant Crisp Name -->
+  <text x="80" y="190" font-family="Inter, system-ui, -apple-system, sans-serif" font-weight="900" font-size="72" fill="#FFFFFF" letter-spacing="-1.5">Pravin A Mathew</text>
+
+  <!-- Main Professional Title -->
+  <text x="80" y="250" font-family="Inter, system-ui, -apple-system, sans-serif" font-weight="700" font-size="34" fill="url(#primaryGlow)" letter-spacing="-0.5">Cloud &amp; AI Infrastructure Engineer</text>
+
+  <!-- Core Highlights Bullet Bar -->
+  <g transform="translate(80, 305)">
+    <text font-family="Inter, system-ui, -apple-system, sans-serif" font-weight="600" font-size="20" fill="#94A3B8">
+      <tspan fill="#F59E0B">⚡</tspan> Autonomous AI Swarms   <tspan fill="#475569">|</tspan>   <tspan fill="#F59E0B">⚡</tspan> Enterprise RAG   <tspan fill="#475569">|</tspan>   <tspan fill="#F59E0B">⚡</tspan> AWS &amp; Kubernetes   <tspan fill="#475569">|</tspan>   <tspan fill="#F59E0B">⚡</tspan> DevSecOps
+    </text>
+  </g>
+
+  <!-- High-Tech Feature Cards (Bottom Row) -->
   
-  <!-- Glowing Background Orbs -->
-  <circle cx="600" cy="180" r="300" fill="#F59E0B" opacity="0.15" filter="url(#glow)"/>
-  <circle cx="1000" cy="480" r="250" fill="#EF4444" opacity="0.12" filter="url(#glow)"/>
-  <circle cx="200" cy="480" r="250" fill="#6366F1" opacity="0.12" filter="url(#glow)"/>
-
-  <!-- Border Frame -->
-  <rect x="20" y="20" width="1160" height="590" rx="24" fill="none" stroke="#F59E0B" stroke-opacity="0.2" stroke-width="2"/>
-
-  <!-- Main Name Title -->
-  <text x="600" y="180" text-anchor="middle" font-family="Inter, system-ui, -apple-system, sans-serif" font-weight="900" font-size="64" fill="#FFFFFF" letter-spacing="-1">Pravin A Mathew</text>
-  
-  <!-- Subtitle with Gradient -->
-  <text x="600" y="245" text-anchor="middle" font-family="Inter, system-ui, -apple-system, sans-serif" font-weight="700" font-size="28" fill="url(#textGrad)" letter-spacing="0.5">Cloud &amp; AI Infrastructure Engineer | Solutions Architect</text>
-
-  <!-- Divider Line -->
-  <line x1="400" y1="285" x2="800" y2="285" stroke="#F59E0B" stroke-opacity="0.3" stroke-width="2" stroke-dasharray="8 4"/>
-
-  <!-- Tech Cards Grid (5 Badges) -->
-
-  <!-- Card 1: AWS -->
-  <g transform="translate(100, 340)">
-    <rect width="170" height="180" rx="20" fill="#1E293B" fill-opacity="0.8" stroke="#F59E0B" stroke-opacity="0.4" stroke-width="1.5"/>
-    <text x="85" y="85" text-anchor="middle" font-family="Inter, sans-serif" font-weight="900" font-size="32" fill="#FF9900">AWS</text>
-    <text x="85" y="130" text-anchor="middle" font-family="Inter, sans-serif" font-weight="600" font-size="16" fill="#94A3B8">Cloud Platform</text>
+  <!-- Card 1: AI Agents & Swarms -->
+  <g transform="translate(80, 365)">
+    <rect width="250" height="165" rx="20" fill="url(#cardBg)" stroke="#F59E0B" stroke-opacity="0.3" stroke-width="1.5"/>
+    <circle cx="45" cy="45" r="18" fill="#10B981" fill-opacity="0.2"/>
+    <path d="M45 35L52 48H38L45 35Z" fill="#10B981"/>
+    <text x="25" y="98" font-family="Inter, sans-serif" font-weight="800" font-size="20" fill="#FFFFFF">AI Swarms</text>
+    <text x="25" y="128" font-family="Inter, sans-serif" font-weight="500" font-size="14" fill="#94A3B8">Multi-Agent Systems</text>
   </g>
 
-  <!-- Card 2: Kubernetes -->
-  <g transform="translate(300, 340)">
-    <rect width="170" height="180" rx="20" fill="#1E293B" fill-opacity="0.8" stroke="#F59E0B" stroke-opacity="0.4" stroke-width="1.5"/>
-    <text x="85" y="85" text-anchor="middle" font-family="Inter, sans-serif" font-weight="900" font-size="30" fill="#38BDF8">K8s</text>
-    <text x="85" y="130" text-anchor="middle" font-family="Inter, sans-serif" font-weight="600" font-size="16" fill="#94A3B8">Kubernetes</text>
+  <!-- Card 2: LangGraph & RAG -->
+  <g transform="translate(355, 365)">
+    <rect width="250" height="165" rx="20" fill="url(#cardBg)" stroke="#F59E0B" stroke-opacity="0.3" stroke-width="1.5"/>
+    <circle cx="45" cy="45" r="18" fill="#F472B6" fill-opacity="0.2"/>
+    <path d="M38 45H52M45 38V52" stroke="#F472B6" stroke-width="3" stroke-linecap="round"/>
+    <text x="25" y="98" font-family="Inter, sans-serif" font-weight="800" font-size="20" fill="#FFFFFF">LangGraph &amp; RAG</text>
+    <text x="25" y="128" font-family="Inter, sans-serif" font-weight="500" font-size="14" fill="#94A3B8">Knowledge Pipelines</text>
   </g>
 
-  <!-- Card 3: Autonomous AI -->
-  <g transform="translate(500, 340)">
-    <rect width="170" height="180" rx="20" fill="#1E293B" fill-opacity="0.8" stroke="#F59E0B" stroke-opacity="0.4" stroke-width="1.5"/>
-    <text x="85" y="75" text-anchor="middle" font-family="Inter, sans-serif" font-weight="900" font-size="24" fill="#34D399">Autonomous</text>
-    <text x="85" y="105" text-anchor="middle" font-family="Inter, sans-serif" font-weight="900" font-size="24" fill="#34D399">AI Agents</text>
-    <text x="85" y="145" text-anchor="middle" font-family="Inter, sans-serif" font-weight="600" font-size="15" fill="#94A3B8">Multi-Agent</text>
+  <!-- Card 3: Kubernetes & Cloud -->
+  <g transform="translate(630, 365)">
+    <rect width="250" height="165" rx="20" fill="url(#cardBg)" stroke="#F59E0B" stroke-opacity="0.3" stroke-width="1.5"/>
+    <circle cx="45" cy="45" r="18" fill="#38BDF8" fill-opacity="0.2"/>
+    <circle cx="45" cy="45" r="8" fill="#38BDF8"/>
+    <text x="25" y="98" font-family="Inter, sans-serif" font-weight="800" font-size="20" fill="#FFFFFF">AWS &amp; K8s</text>
+    <text x="25" y="128" font-family="Inter, sans-serif" font-weight="500" font-size="14" fill="#94A3B8">Cloud Native Scaling</text>
   </g>
 
-  <!-- Card 4: LangGraph & RAG -->
-  <g transform="translate(700, 340)">
-    <rect width="170" height="180" rx="20" fill="#1E293B" fill-opacity="0.8" stroke="#F59E0B" stroke-opacity="0.4" stroke-width="1.5"/>
-    <text x="85" y="75" text-anchor="middle" font-family="Inter, sans-serif" font-weight="900" font-size="24" fill="#F472B6">LangGraph</text>
-    <text x="85" y="105" text-anchor="middle" font-family="Inter, sans-serif" font-weight="900" font-size="24" fill="#F472B6">&amp; RAG</text>
-    <text x="85" y="145" text-anchor="middle" font-family="Inter, sans-serif" font-weight="600" font-size="15" fill="#94A3B8">Orchestration</text>
+  <!-- Card 4: DevSecOps -->
+  <g transform="translate(905, 365)">
+    <rect width="245" height="165" rx="20" fill="url(#cardBg)" stroke="#F59E0B" stroke-opacity="0.3" stroke-width="1.5"/>
+    <circle cx="45" cy="45" r="18" fill="#F59E0B" fill-opacity="0.2"/>
+    <path d="M45 35L53 40V47C53 52 49 56 45 57C41 56 37 52 37 47V40L45 35Z" fill="#F59E0B"/>
+    <text x="25" y="98" font-family="Inter, sans-serif" font-weight="800" font-size="20" fill="#FFFFFF">DevSecOps</text>
+    <text x="25" y="128" font-family="Inter, sans-serif" font-weight="500" font-size="14" fill="#94A3B8">Automated Security</text>
   </g>
 
-  <!-- Card 5: DevSecOps -->
-  <g transform="translate(900, 340)">
-    <rect width="170" height="180" rx="20" fill="#1E293B" fill-opacity="0.8" stroke="#F59E0B" stroke-opacity="0.4" stroke-width="1.5"/>
-    <text x="85" y="85" text-anchor="middle" font-family="Inter, sans-serif" font-weight="900" font-size="26" fill="#F59E0B">DevSecOps</text>
-    <text x="85" y="130" text-anchor="middle" font-family="Inter, sans-serif" font-weight="600" font-size="16" fill="#94A3B8">Security &amp; CI/CD</text>
-  </g>
-
-  <!-- Footer domain watermark -->
-  <text x="600" y="585" text-anchor="middle" font-family="Inter, sans-serif" font-weight="600" font-size="16" fill="#64748B" letter-spacing="1">pravinmathew-pearl.vercel.app</text>
+  <!-- Bottom Right Domain Branding -->
+  <text x="1100" y="575" text-anchor="end" font-family="Inter, sans-serif" font-weight="700" font-size="16" fill="#64748B" letter-spacing="1">pravinmathew-pearl.vercel.app</text>
 </svg>
