@@ -1,0 +1,10 @@
+[build]
+  base = "mathew-portfolio"
+  command = "npm install && npm run build"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# Next.js plugin will handle routing automatically
+
