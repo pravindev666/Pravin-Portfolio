@@ -45,10 +45,10 @@ export const metadata = {
     siteName: "Pravin A Mathew Portfolio",
     images: [
       {
-        url: "/images/profile.png",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Pravin A Mathew - Cloud & AI Infrastructure Engineer"
+        alt: "Pravin A Mathew - Cloud & AI Infrastructure Engineer | Solutions Architect"
       },
     ],
     locale: "en_US",
@@ -59,7 +59,7 @@ export const metadata = {
     title: "Pravin A Mathew | Cloud & AI Infrastructure Engineer",
     description:
       "Portfolio of Pravin A Mathew — AI Agent Systems, RAG, AWS, Docker, Kubernetes, Terraform, and DevSecOps.",
-    images: ["/images/profile.png"],
+    images: ["/og-image.png"],
     creator: "@pravinmathew"
   },
   alternates: {
@@ -85,7 +85,7 @@ export default function RootLayout({ children }) {
     "name": "Pravin Mathew",
     "alternateName": "Pravin A Mathew",
     "url": baseUrl,
-    "image": `${baseUrl}/images/profile.png`,
+    "image": `${baseUrl}/og-image.png`,
     "jobTitle": "Cloud & AI Infrastructure Engineer | Solutions Architect",
     "worksFor": {
       "@type": "Organization",
